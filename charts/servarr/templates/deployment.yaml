@@ -19,7 +19,7 @@ spec:
         image: "{{ $app.image }}"
         imagePullPolicy: Always
         ports:
-        - containerPort: {{ $app.container.app | int }}
+        - containerPort: {{ $app.container.port | int }}
         env:
         - name: PGID
           value: "{{ .Values.servarr.uid }}"
