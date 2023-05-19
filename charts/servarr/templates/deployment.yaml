@@ -41,6 +41,6 @@ spec:
       {{- if $app.media.enabled }}
       - name: "{{ .Values.app }}-media"
         nfs:
-          server: "{{ .Values.servarr.media.volume.server }}"
-          path: "{{ .Values.servarr.media.volume.path }}"
+          server: "{{ .Values.servarr.media.volume.nfs.server }}"
+          path: "{{ .Values.servarr.media.volume.nfs.path }}"
       {{- end }}
