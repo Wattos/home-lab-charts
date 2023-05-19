@@ -10,7 +10,7 @@ spec:
   ports:
   - name: {{ .Values.app }} 
     port: 80
-    targetPort: {{ $app.cotainer.port }}
+    targetPort: {{ $app.container.port }}
     
   selector:
     app: {{ $fullname }}
