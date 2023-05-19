@@ -22,11 +22,11 @@ spec:
         - containerPort: {{ $app.container.app | int }}
         env:
         - name: PGID
-          value: {{ .Values.servarr.uid }}
+          value: "{{ .Values.servarr.uid }}"
         - name: PUID
-          value: {{ .Values.servarr.gid }}
+          value: "{{ .Values.servarr.gid }}"
         - name: TZ
-          value: {{ .Values.servarr.timezone }}
+          value: "{{ .Values.servarr.timezone }}"
         volumeMounts:
         - name: "{{ .Values.app }}-config"
           mountPath: /config
