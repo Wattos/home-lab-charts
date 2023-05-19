@@ -2,6 +2,6 @@
 
 This is a repository with helm charts for my home lab
 
-## sonarr
+## servarr
 
-A helm chart to deploy a sonarr app (e.g. radarr, lidarr, etc...)
+A helm chart to deploy a servarr app (e.g. radarr, lidarr, etc...)
