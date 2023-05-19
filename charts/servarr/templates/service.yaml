@@ -1,9 +1,8 @@
 {{- $app := (index .Values .Values.app) -}}
-{{- $fullname := printf "%s-%s" .Release.Name .Chart.Name | trunc 63 | trimSuffix "-" -}}
 apiVersion: v1
 kind: Service
 metadata:
-  name: {{ $fullname }}
+  name: {{ .Values.app }}
   labels:
     chart: "{{ .Chart.Name }}-{{ .Chart.Version | replace "+" "_" }}"
 spec:
@@ -13,4 +12,4 @@ spec:
     targetPort: {{ $app.container.port }}
     
   selector:
-    app: {{ $fullname }}
+    app: {{ .Values.app }}
