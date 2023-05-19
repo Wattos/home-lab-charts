@@ -28,7 +28,7 @@ servarr:
   config:
     # The name of the storage class for the persistant volume
     storage:
-      className: synology-nas-icsi-default
+      className: # the storage class name to use
     
 
 # per app configuration
