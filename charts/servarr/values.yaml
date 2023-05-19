@@ -1,0 +1,83 @@
+
+# General Settings towards servarr
+app: # one of: lidarr, radarr, readarr, sonarr, prowlarr
+
+servarr:
+  # How many replicas of the service should run
+  replicaCount: 1
+
+  # user id and group id to run as
+  uid: 1000
+  gid: 1000
+
+  # Timezone information
+  timezone: "Etc/UTC"
+
+  ingress:
+    enabled: true
+
+    # The host under which the app will be available in the cluster
+    host: 
+
+  media:
+    volume:
+      nfs:
+        server:
+        path:
+  
+  config:
+    # The name of the storage class for the persistant volume
+    storage:
+      className: synology-nas-icsi-default
+    
+
+# per app configuration
+lidarr:
+  image: lscr.io/linuxserver/lidarr
+  version: latest
+
+  container:
+    port: 8686
+  
+  media:
+    enabled: true
+
+radarr:
+  image: lscr.io/linuxserver/radarr
+  version: latest
+
+  container:
+    port: 7878
+  
+  media:
+    enabled: true
+
+readarr:
+  image: lscr.io/linuxserver/readarr
+  version: develop
+
+  container:
+    port: 8787
+
+  media:
+    enabled: true
+
+sonarr:
+  image: lscr.io/linuxserver/sonarr
+  version: latest
+
+  container:
+    port: 8989
+
+  media:
+    enabled: true
+
+prowlarr:
+  image: linuxserver/prowlarr
+  version: latest
+
+  container:
+    port: 9696
+
+  media:
+    enabled: false
