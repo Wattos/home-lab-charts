@@ -8,4 +8,4 @@ spec:
   storageClassName: "{{ .Values.servarr.config.storage.className }}"
   resources:
     requests:
-      storage: 200Mi
+      storage: "{{ .Values.servarr.config.storage.size }}"

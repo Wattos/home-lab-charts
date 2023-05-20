@@ -29,6 +29,7 @@ servarr:
     # The name of the storage class for the persistant volume
     storage:
       className: # the storage class name to use
+      size: "1000Mi"
     
 
 # per app configuration
