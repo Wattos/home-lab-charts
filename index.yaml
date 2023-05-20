@@ -3,6 +3,23 @@ entries:
   servarr:
   - apiVersion: v1
     appVersion: v3
+    created: "2023-05-20T09:17:59.817313349Z"
+    description: Helm Chart for all servarr apps, such as lidarr, radarr, readarr,
+      sonarr, whisparr
+    digest: 70b966f0c7ef30acb9b28270909d9a612723467b28f9f9b5cda1d746812b5bc2
+    home: https://github.com/wattos/home-lab-charts
+    kubeVersion: '>=1.23.0-0'
+    maintainers:
+    - email: wattos@users.noreply.github.com
+      name: wattos
+    name: servarr
+    sources:
+    - https://github.com/wattos/home-lab-charts
+    urls:
+    - https://github.com/Wattos/home-lab-charts/releases/download/servarr-1.0.9/servarr-1.0.9.tgz
+    version: 1.0.9
+  - apiVersion: v1
+    appVersion: v3
     created: "2023-05-19T21:40:41.927711003Z"
     description: Helm Chart for all servarr apps, such as lidarr, radarr, readarr,
       sonarr, whisparr
@@ -154,4 +171,4 @@ entries:
     urls:
     - https://github.com/Wattos/home-lab-charts/releases/download/servarr-1.0.0/servarr-1.0.0.tgz
     version: 1.0.0
-generated: "2023-05-19T21:40:41.928046112Z"
+generated: "2023-05-20T09:17:59.817361149Z"
