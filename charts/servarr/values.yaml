@@ -15,6 +15,7 @@ servarr:
 
   ingress:
     enabled: true
+    annotations: {}
 
     # The host under which the app will be available in the cluster
     host: 
