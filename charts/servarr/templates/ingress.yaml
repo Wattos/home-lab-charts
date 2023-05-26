@@ -11,7 +11,7 @@ metadata:
     heritage: "{{ .Release.Service }}"
   annotations:
     kubernetes.io/tls-acme: "true"
-    {{ toYaml .Values.servarr.ingress.annotations | indent 4 }}
+    {{- toYaml .Values.servarr.ingress.annotations | nindent 4 }}
 spec:
   rules:
     - host: {{ .Values.servarr.ingress.host }}
