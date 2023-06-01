@@ -68,6 +68,22 @@ entries:
   emby:
   - apiVersion: v1
     appVersion: v3
+    created: "2023-06-01T18:11:59.487283414Z"
+    description: Helm Chart to deploy emby
+    digest: 3d099ba75bd3c05e19ab01a887eb89da6bee7da3169e989af29d71fa5b78b655
+    home: https://github.com/wattos/home-lab-charts
+    kubeVersion: '>=1.23.0-0'
+    maintainers:
+    - email: wattos@users.noreply.github.com
+      name: wattos
+    name: emby
+    sources:
+    - https://github.com/wattos/home-lab-charts
+    urls:
+    - https://github.com/Wattos/home-lab-charts/releases/download/emby-1.0.1/emby-1.0.1.tgz
+    version: 1.0.1
+  - apiVersion: v1
+    appVersion: v3
     created: "2023-06-01T17:56:08.50159379Z"
     description: Helm Chart to deploy emby
     digest: de8f346f99dbc9b1491f8b5e3a3b09f6205a97dcea9c35cc8d18a22430857769
@@ -419,4 +435,4 @@ entries:
     urls:
     - https://github.com/Wattos/home-lab-charts/releases/download/servarr-1.0.0/servarr-1.0.0.tgz
     version: 1.0.0
-generated: "2023-06-01T17:56:08.621905607Z"
+generated: "2023-06-01T18:11:59.487363214Z"
