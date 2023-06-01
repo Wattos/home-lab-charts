@@ -1,6 +1,6 @@
 deployment:
   enabled: true
-  image: "lscr.io/linuxserver/sabnzbd:latest"
+  image: "lscr.io/linuxserver/emby:latest"
   port: 8096
   replicaCount: 1
   env:
@@ -24,7 +24,7 @@ storage:
     config:
       enabled: true
       storageClassName:
-      size: 500Mi
+      size: 50000Mi
 
     media:
       enabled: true
