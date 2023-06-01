@@ -1,5 +1,6 @@
 {{- define "common.volume" -}}
-{{- if .Values.storage.mounts.config.enabled }}
+{{- if .Values.storage.mounts.config.enabled -}}
+---
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
@@ -12,4 +13,4 @@ spec:
     requests:
       storage: "{{ .Values.storage.mounts.config.size }}"
 {{- end -}}
-{{- end }}
+{{- end -}}

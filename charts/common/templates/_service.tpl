@@ -1,5 +1,6 @@
 {{- define "common.service" -}}
 {{- if .Values.service.enabled -}}
+---
 apiVersion: v1
 kind: Service
 metadata:
@@ -16,4 +17,4 @@ spec:
     app: {{ include "common.names.fullname" . }}
 
 {{- end -}}
-{{- end }}
+{{- end -}}

@@ -1,5 +1,6 @@
 {{- define "common.deployment" -}}
 {{- if .Values.deployment.enabled -}}
+---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -47,5 +48,5 @@ spec:
           server: "{{ .Values.storage.mounts.media.volume.nfs.server }}"
           path: "{{ .Values.storage.mounts.media.volume.nfs.path }}"
       {{- end }}
-{{- end }}
-{{- end }}
+{{- end -}}
+{{- end -}}

@@ -1,5 +1,6 @@
 {{- define "common.ingress" -}}
 {{- if .Values.ingress.enabled -}}
+---
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
@@ -29,4 +30,4 @@ spec:
     hosts:
     - {{ .Values.ingress.host }}
 {{- end -}}
-{{- end }}
+{{- end -}}
