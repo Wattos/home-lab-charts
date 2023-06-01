@@ -9,7 +9,7 @@ deployment:
     - name: PGID
       value: 1000
     - name: TZ
-      value: CET  
+      value: CET
 
 ingress:
   enabled: true

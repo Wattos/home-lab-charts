@@ -44,8 +44,8 @@ spec:
       {{- if .Values.storage.mounts.media.enabled }}
       - name: {{ include "common.names.name" . }}-media
         nfs:
-          server: "{{ .Values..storage.mounts.media.volume.nfs.server }}"
-          path: "{{ .Values..storage.mounts.media.volume.nfs.path }}"
+          server: "{{ .Values.storage.mounts.media.volume.nfs.server }}"
+          path: "{{ .Values.storage.mounts.media.volume.nfs.path }}"
       {{- end }}
 {{- end }}
 {{- end }}
