@@ -1,0 +1,35 @@
+deployment:
+  enabled: true
+  image: "lscr.io/linuxserver/sabnzbd:latest"
+  port: 8080
+  replicaCount: 1
+  env:
+    - name: PUID
+      value: 1000
+    - name: PGID
+      value: 1000
+    - name: TZ
+      value: CET  
+
+ingress:
+  enabled: true
+  annotations: {}
+  host:
+
+service:
+  enabled: true
+
+storage:
+  mounts:
+    config:
+      enabled: true
+      storageClassName:
+      size: 500Mi
+
+    media:
+      enabled: true
+      volume:
+        nfs:
+          path:
+          server:
+  

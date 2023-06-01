@@ -1,0 +1,29 @@
+deployment:
+  enabled: true
+  image:
+  port:
+  replicaCount: 1
+  env: []
+
+ingress:
+  enabled: true
+  annotations: {}
+  host:
+
+service:
+  enabled: false
+
+storage:
+  mounts:
+    config:
+      enabled: false
+      storageClassName:
+      size: 200Mi
+
+    media:
+      enabled: false
+      volume:
+        nfs:
+          path:
+          server:
+  

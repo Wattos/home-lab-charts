@@ -1,0 +1,16 @@
+apiVersion: v1
+name: sabnzbd
+version: "1.0.0"
+kubeVersion: ">=1.23.0-0"
+description: Helm Chart to deploy sabnzbd 
+appVersion: "v3"
+home: https://github.com/wattos/home-lab-charts
+maintainers:
+- email: wattos@users.noreply.github.com
+  name: wattos
+dependencies:
+  - name: common
+    version: "1.0.0"
+    repository: "file://../common"
+sources:
+- https://github.com/wattos/home-lab-charts

@@ -1,0 +1,12 @@
+apiVersion: v1
+name: common
+version: "1.0.0"
+kubeVersion: ">=1.23.0-0"
+description: The common chart 
+appVersion: "v1"
+home: https://github.com/wattos/home-lab-charts
+maintainers:
+- email: wattos@users.noreply.github.com
+  name: wattos
+sources:
+- https://github.com/wattos/home-lab-charts
