@@ -36,6 +36,11 @@ spec:
         - name: {{ include "common.names.name" . }}-media
           mountPath: /media
         {{- end }}
+        {{- if .Values.storage.mounts.videoDriver.enabled }}
+        - name: {{ include "common.names.name" . }}-video
+          mountPath: {{ .Values.storage.mounts.videoDriver.path }}
+        {{- end }}
+
       volumes:
       {{- if .Values.storage.mounts.config.enabled }}
       - name: {{ include "common.names.name" . }}-config
@@ -47,6 +52,15 @@ spec:
         nfs:
           server: "{{ .Values.storage.mounts.media.volume.nfs.server }}"
           path: "{{ .Values.storage.mounts.media.volume.nfs.path }}"
+      {{- end }}
+      {{- if .Values.storage.mounts.videoDriver.enabled }}
+      - name: {{ include "common.names.name" . }}-video
+        hostPath:
+          path: {{ .Values.storage.mounts.videoDriver.path }}
+      {{- end }}
+      {{- if .Values.storage.mounts.videoDriver.enabled }}
+      securityContext:
+          privileged: true
       {{- end }}
 {{- end -}}
 {{- end -}}

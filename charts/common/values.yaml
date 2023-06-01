@@ -26,4 +26,9 @@ storage:
         nfs:
           path:
           server:
+    
+    videoDriver:
+      enabled: false
+      path:
+      
   
