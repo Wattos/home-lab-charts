@@ -52,6 +52,22 @@ entries:
   sabnzbd:
   - apiVersion: v1
     appVersion: v3
+    created: "2023-06-01T12:21:51.833868999Z"
+    description: Helm Chart to deploy sabnzbd
+    digest: c6dd27c6ed1d1d225348c4be97b524df025614c16b5cfb17ff19285157b210db
+    home: https://github.com/wattos/home-lab-charts
+    kubeVersion: '>=1.23.0-0'
+    maintainers:
+    - email: wattos@users.noreply.github.com
+      name: wattos
+    name: sabnzbd
+    sources:
+    - https://github.com/wattos/home-lab-charts
+    urls:
+    - https://github.com/Wattos/home-lab-charts/releases/download/sabnzbd-1.0.4/sabnzbd-1.0.4.tgz
+    version: 1.0.4
+  - apiVersion: v1
+    appVersion: v3
     created: "2023-06-01T12:17:22.373596037Z"
     description: Helm Chart to deploy sabnzbd
     digest: d979e5d7c43c62c9897fec7ae0bcde845867e88cfa54b8c18aa7e42b1908c8ea
@@ -354,4 +370,4 @@ entries:
     urls:
     - https://github.com/Wattos/home-lab-charts/releases/download/servarr-1.0.0/servarr-1.0.0.tgz
     version: 1.0.0
-generated: "2023-06-01T12:17:22.373644739Z"
+generated: "2023-06-01T12:21:51.8339213Z"
