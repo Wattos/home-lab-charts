@@ -1,5 +1,39 @@
 apiVersion: v1
 entries:
+  common:
+  - apiVersion: v1
+    appVersion: v1
+    created: "2023-06-01T05:59:45.21083089Z"
+    description: The common chart
+    digest: 22ded08c902adf2c36d8cf2a8e8607eee0e04d1ac7ffcb354cdff5c8396b3218
+    home: https://github.com/wattos/home-lab-charts
+    kubeVersion: '>=1.23.0-0'
+    maintainers:
+    - email: wattos@users.noreply.github.com
+      name: wattos
+    name: common
+    sources:
+    - https://github.com/wattos/home-lab-charts
+    urls:
+    - https://github.com/Wattos/home-lab-charts/releases/download/common-1.0.0/common-1.0.0.tgz
+    version: 1.0.0
+  sabnzbd:
+  - apiVersion: v1
+    appVersion: v3
+    created: "2023-06-01T05:59:45.418675282Z"
+    description: Helm Chart to deploy sabnzbd
+    digest: 4518d01c4737e6e1c5529f1501d0eed840a7f716828340360d8d50c11ea40bfe
+    home: https://github.com/wattos/home-lab-charts
+    kubeVersion: '>=1.23.0-0'
+    maintainers:
+    - email: wattos@users.noreply.github.com
+      name: wattos
+    name: sabnzbd
+    sources:
+    - https://github.com/wattos/home-lab-charts
+    urls:
+    - https://github.com/Wattos/home-lab-charts/releases/download/sabnzbd-1.0.0/sabnzbd-1.0.0.tgz
+    version: 1.0.0
   servarr:
   - apiVersion: v1
     appVersion: v3
@@ -256,4 +290,4 @@ entries:
     urls:
     - https://github.com/Wattos/home-lab-charts/releases/download/servarr-1.0.0/servarr-1.0.0.tgz
     version: 1.0.0
-generated: "2023-05-26T13:54:44.959435233Z"
+generated: "2023-06-01T05:59:45.418723083Z"
