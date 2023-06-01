@@ -65,7 +65,40 @@ entries:
     urls:
     - https://github.com/Wattos/home-lab-charts/releases/download/common-1.0.0/common-1.0.0.tgz
     version: 1.0.0
+  emby:
+  - apiVersion: v1
+    appVersion: v3
+    created: "2023-06-01T17:56:08.50159379Z"
+    description: Helm Chart to deploy emby
+    digest: de8f346f99dbc9b1491f8b5e3a3b09f6205a97dcea9c35cc8d18a22430857769
+    home: https://github.com/wattos/home-lab-charts
+    kubeVersion: '>=1.23.0-0'
+    maintainers:
+    - email: wattos@users.noreply.github.com
+      name: wattos
+    name: emby
+    sources:
+    - https://github.com/wattos/home-lab-charts
+    urls:
+    - https://github.com/Wattos/home-lab-charts/releases/download/emby-1.0.0/emby-1.0.0.tgz
+    version: 1.0.0
   sabnzbd:
+  - apiVersion: v1
+    appVersion: v3
+    created: "2023-06-01T17:56:08.621845206Z"
+    description: Helm Chart to deploy sabnzbd
+    digest: c68cd1634e774e7624eee23e338fb560be79a65586c66ca34231b22ff0a2a28e
+    home: https://github.com/wattos/home-lab-charts
+    kubeVersion: '>=1.23.0-0'
+    maintainers:
+    - email: wattos@users.noreply.github.com
+      name: wattos
+    name: sabnzbd
+    sources:
+    - https://github.com/wattos/home-lab-charts
+    urls:
+    - https://github.com/Wattos/home-lab-charts/releases/download/sabnzbd-1.0.5/sabnzbd-1.0.5.tgz
+    version: 1.0.5
   - apiVersion: v1
     appVersion: v3
     created: "2023-06-01T12:21:51.833868999Z"
@@ -386,4 +419,4 @@ entries:
     urls:
     - https://github.com/Wattos/home-lab-charts/releases/download/servarr-1.0.0/servarr-1.0.0.tgz
     version: 1.0.0
-generated: "2023-06-01T17:50:22.854163108Z"
+generated: "2023-06-01T17:56:08.621905607Z"
