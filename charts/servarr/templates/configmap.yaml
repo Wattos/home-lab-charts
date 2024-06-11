@@ -1,0 +1,57 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: "{{ .Values.app }}-config-xml"
+  labels:
+    chart: "{{ .Chart.Name }}-{{ .Chart.Version | replace "+" "_" }}"
+data: {{ $app := (index .Values .Values.app) }}
+  config.xml: |-
+    <Config>
+        {{- if .Values.appConfig.instanceName }}
+        <InstanceName>{{ .Values.appConfig.instanceName }}</InstanceName>
+        {{- else }}
+        <InstanceName>{{ .Values.app }}</InstanceName>
+        {{- end }}
+
+        <BindAddress>{{ .Values.appConfig.bindAddress }}</BindAddress>
+        <Port>{{ $app.container.port | int }}</Port>
+        <SslPort>{{ .Values.appConfig.sslPort }}</SslPort>
+        <EnableSsl>{{ .Values.appConfig.enableSsl }}</EnableSsl>
+
+        <ApiKey>{{ .Values.appConfig.apiKey }}</ApiKey>
+
+        <LaunchBrowser>{{ .Values.appConfig.launchBrowser }}</LaunchBrowser>
+        <AuthenticationMethod>{{ .Values.appConfig.authenticationMethod }}</AuthenticationMethod>
+
+        <Branch>{{ .Values.appConfig.branch }}</Branch>
+        <LogLevel>{{ .Values.appConfig.logLevel }}</LogLevel>
+        <SslCertPath>{{ .Values.appConfig.sslCertPath }}</SslCertPath>
+        <SslCertPassword>{{ .Values.appConfig.sslCertPassword }}</SslCertPassword>
+        <UrlBase>{{ .Values.appConfig.urlBase }}</UrlBase>
+
+        <UpdateMechanism>{{ .Values.appConfig.updateMechanism }}</UpdateMechanism>
+        <AuthenticationRequired>{{ .Values.appConfig.authenticationRequired }}</AuthenticationRequired>
+        <SyslogPort>{{ .Values.appConfig.syslogPort }}</SyslogPort>
+        <AnalyticsEnabled>{{ .Values.appConfig.analyticsEnabled }}</AnalyticsEnabled>
+
+        {{- if .Values.appConfig.postgresHost }}
+        <PostgresHost>{{ .Values.appConfig.postgresHost }}</PostgresHost>
+        <PostgresPort>{{ .Values.appConfig.postgresPort }}</PostgresPort>
+        <PostgresUser>{{ .Values.appConfig.postgresUser }}</PostgresUser>
+        <PostgresPassword>{{ .Values.appConfig.postgresPassword }}</PostgresPassword>
+
+        {{- if .Values.appConfig.postgresMainDb }}
+        <PostgresMainDb>{{ .Values.appConfig.postgresMainDb }}</PostgresMainDb>
+        {{- else }}
+        <PostgresMainDb>{{ .Values.appConfig.app }}-main</PostgresMainDb>
+        {{- end }}
+
+        {{- if .Values.appConfig.postgresLogDb }}
+        <PostgresLogDb>{{ .Values.appConfig.postgresLogDb }}</PostgresLogDb>
+        {{- else }}
+        <PostgresLogDb>{{ .Values.appConfig.app }}-log</PostgresLogDb>
+        {{- end }}
+
+        {{- end }}
+
+    </Config>

@@ -32,6 +32,9 @@ spec:
         volumeMounts:
         - name: "{{ .Values.app }}-config"
           mountPath: /config
+        - name: "{{ .Values.app }}-config-xml"
+          mountPath: /config
+          subPath: config.xml
         {{- if $app.media.enabled }}
         - name: "{{ .Values.app }}-media"
           mountPath: /media
@@ -40,6 +43,9 @@ spec:
       - name: "{{ .Values.app }}-config"
         persistentVolumeClaim:
           claimName: "{{ .Values.app }}-config"
+      - name: "{{ .Values.app }}-config-xml"
+        configMap:
+          name: {{ .Values.app }}-config-xml
       {{- if $app.media.enabled }}
       - name: "{{ .Values.app }}-media"
         nfs:

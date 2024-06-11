@@ -2,6 +2,31 @@
 # General Settings towards servarr
 app: # one of: lidarr, radarr, readarr, sonarr, prowlarr
 
+appConfig:
+    bindAddress: "*"
+    sslPort: 9898
+    enableSsl: False
+    launchBrowser: True
+    apiKey: "random-key"
+    authenticationMethod: "Forms"
+    branch: "master"
+    logLevel: "info"
+    sslCertPath: ""
+    sslCertPassword: ""
+    urlBase: ""
+    instanceName:
+    updateMechanism: "Docker"
+    authenticationRequired: "Enabled"
+    syslogPort: 514
+    analyticsEnabled: "False"
+
+    postgresHost:
+    PostgresPort:
+    PostgresUser:
+    PostgresPassword:
+    PostgresMainDb:
+    postgresLogDb:
+
 servarr:
   # How many replicas of the service should run
   replicaCount: 1
@@ -25,13 +50,12 @@ servarr:
       nfs:
         server:
         path:
-  
+
   config:
     # The name of the storage class for the persistant volume
     storage:
       className: # the storage class name to use
       size: "200Mi"
-    
 
 # per app configuration
 lidarr:
