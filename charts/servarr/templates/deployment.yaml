@@ -16,6 +16,21 @@ spec:
       labels:
         app: {{ .Values.app }}
     spec:
+      # The *arr apps rewrite config.xml at startup, so it can't be a read-only
+      # ConfigMap mount. Copy the rendered config into the writable PVC instead.
+      initContainers:
+      - name: config-xml
+        image: busybox:1.37
+        command:
+        - sh
+        - -c
+        - cp /config-template/config.xml /config/config.xml && chown {{ .Values.servarr.uid }}:{{ .Values.servarr.gid }} /config/config.xml && chmod 600 /config/config.xml
+        volumeMounts:
+        - name: "{{ .Values.app }}-config"
+          mountPath: /config
+        - name: "{{ .Values.app }}-config-xml"
+          mountPath: /config-template
+          readOnly: true
       containers: {{ $app := (index .Values .Values.app) }}
       - name: "{{ .Values.app }}"
         image: "{{ $app.image }}"
@@ -32,9 +47,6 @@ spec:
         volumeMounts:
         - name: "{{ .Values.app }}-config"
           mountPath: /config
-        - name: "{{ .Values.app }}-config-xml"
-          mountPath: /config/config.xml
-          subPath: config.xml
         {{- if $app.media.enabled }}
         - name: "{{ .Values.app }}-media"
           mountPath: /media
