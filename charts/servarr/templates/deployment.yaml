@@ -33,7 +33,7 @@ spec:
         - name: "{{ .Values.app }}-config"
           mountPath: /config
         - name: "{{ .Values.app }}-config-xml"
-          mountPath: /config
+          mountPath: /config/config.xml
           subPath: config.xml
         {{- if $app.media.enabled }}
         - name: "{{ .Values.app }}-media"

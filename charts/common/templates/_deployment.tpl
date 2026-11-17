@@ -40,6 +40,11 @@ spec:
         - name: {{ include "common.names.name" . }}-video
           mountPath: {{ .Values.storage.mounts.videoDriver.path }}
         {{- end }}
+        {{- if .Values.storage.mounts.videoDriver.enabled }}
+        # privileged is a container-level field (needed for /dev/dri access)
+        securityContext:
+          privileged: true
+        {{- end }}
 
       volumes:
       {{- if .Values.storage.mounts.config.enabled }}
@@ -57,10 +62,6 @@ spec:
       - name: {{ include "common.names.name" . }}-video
         hostPath:
           path: {{ .Values.storage.mounts.videoDriver.path }}
-      {{- end }}
-      {{- if .Values.storage.mounts.videoDriver.enabled }}
-      securityContext:
-          privileged: true
       {{- end }}
 {{- end -}}
 {{- end -}}
